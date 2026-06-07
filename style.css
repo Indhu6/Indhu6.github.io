@@ -1,17 +1,33 @@
+:root {
+  --bg: #f5f7fb;
+  --bg-soft: #eef2f8;
+  --paper: #ffffff;
+  --paper-2: #f8fafc;
+
+  --ink: #0f172a;
+  --ink-2: #334155;
+  --ink-3: #64748b;
+
+  --primary: #1e3a8a;
+  --primary-2: #2563eb;
+  --primary-dark: #172554;
+
+  --accent: #f2c811;
+  --accent-dark: #c99a00;
+
+  --teal: #0f766e;
+  --green: #15803d;
+
+  --border: #1e293b;
+  --muted-border: #cbd5e1;
+
+  --shadow: rgba(15, 23, 42, 0.12);
+}
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --bg: #f4efe5;
-  --ink: #16120f;
-  --muted: #665d52;
-  --accent: #8b1e1e;
-  --accent-dark: #5e1212;
-  --paper: #fffaf0;
-  --border: #241b16;
 }
 
 html {
@@ -19,10 +35,10 @@ html {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Inter, Arial, sans-serif;
   background: var(--bg);
   color: var(--ink);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 a {
@@ -35,11 +51,12 @@ a {
   justify-content: space-between;
   gap: 20px;
   padding: 10px 6%;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--primary-dark);
+  color: white;
+  border-bottom: 4px solid var(--accent);
 }
 
 .site-header {
@@ -47,18 +64,22 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 28px 6%;
-  border-bottom: 3px solid var(--border);
   background: var(--paper);
+  border-bottom: 2px solid var(--muted-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .brand h1 {
-  font-size: 36px;
+  font-size: 34px;
   letter-spacing: -1px;
+  color: var(--primary-dark);
 }
 
 .brand p {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--ink-3);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -72,19 +93,24 @@ nav a {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: bold;
+  font-weight: 700;
+  color: var(--ink-2);
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: var(--primary-2);
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   gap: 40px;
-  padding: 80px 6%;
-  border-bottom: 3px solid var(--border);
+  padding: 90px 6%;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(242, 200, 17, 0.18), transparent 32%),
+    var(--bg-soft);
+  border-bottom: 2px solid var(--muted-border);
 }
 
 .eyebrow,
@@ -92,28 +118,29 @@ nav a:hover {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-weight: bold;
-  color: var(--accent);
+  font-weight: 800;
+  color: var(--primary-2);
   margin-bottom: 14px;
 }
 
 .hero h2 {
-  font-size: clamp(48px, 8vw, 108px);
+  font-size: clamp(48px, 7vw, 96px);
   line-height: 0.95;
   letter-spacing: -4px;
   max-width: 950px;
+  color: var(--ink);
 }
 
 .hero h2 span {
   display: block;
-  color: var(--accent);
+  color: var(--primary-2);
 }
 
 .hero-text {
   max-width: 720px;
   margin-top: 28px;
   font-size: 21px;
-  color: var(--muted);
+  color: var(--ink-2);
 }
 
 .hero-actions {
@@ -126,34 +153,37 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 13px 20px;
-  border: 2px solid var(--border);
-  font-weight: bold;
+  border: 2px solid var(--primary-dark);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 13px;
+  transition: 0.2s ease;
 }
 
 .btn.primary {
-  background: var(--accent);
+  background: var(--primary-2);
   color: white;
+  box-shadow: 5px 5px 0 var(--primary-dark);
 }
 
 .btn.secondary {
-  background: transparent;
-  color: var(--ink);
+  background: var(--paper);
+  color: var(--primary-dark);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--primary-dark);
 }
 
 .hero-card {
-  background: var(--accent);
+  background: var(--primary-dark);
   color: white;
   border: 3px solid var(--border);
   padding: 28px;
   align-self: start;
-  box-shadow: 10px 10px 0 var(--border);
+  box-shadow: 10px 10px 0 var(--accent);
 }
 
 .card-label {
@@ -161,6 +191,7 @@ nav a:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 40px;
+  color: var(--accent);
 }
 
 .hero-card h3 {
@@ -170,7 +201,7 @@ nav a:hover {
 }
 
 .hero-card p {
-  color: #ffe7d6;
+  color: #dbeafe;
 }
 
 .mini-stats {
@@ -178,13 +209,14 @@ nav a:hover {
   grid-template-columns: 1fr;
   gap: 18px;
   margin-top: 34px;
-  border-top: 2px solid rgba(255,255,255,0.4);
+  border-top: 2px solid rgba(255,255,255,0.25);
   padding-top: 24px;
 }
 
 .mini-stats strong {
   display: block;
   font-size: 34px;
+  color: var(--accent);
 }
 
 .mini-stats span {
@@ -196,13 +228,13 @@ nav a:hover {
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-bottom: 3px solid var(--border);
   background: var(--paper);
+  border-bottom: 2px solid var(--muted-border);
 }
 
 .stats-bar div {
   padding: 28px;
-  border-right: 3px solid var(--border);
+  border-right: 2px solid var(--muted-border);
 }
 
 .stats-bar div:last-child {
@@ -212,17 +244,18 @@ nav a:hover {
 .stats-bar strong {
   display: block;
   font-size: 28px;
-  color: var(--accent);
+  color: var(--primary-2);
 }
 
 .stats-bar span {
-  color: var(--muted);
+  color: var(--ink-3);
   font-size: 14px;
 }
 
 .section {
   padding: 80px 6%;
-  border-bottom: 3px solid var(--border);
+  border-bottom: 2px solid var(--muted-border);
+  background: var(--bg);
 }
 
 .two-col {
@@ -236,12 +269,13 @@ nav a:hover {
   line-height: 0.95;
   letter-spacing: -2px;
   margin-bottom: 22px;
+  color: var(--primary-dark);
 }
 
 .two-col p,
 .section-intro {
   font-size: 20px;
-  color: var(--muted);
+  color: var(--ink-2);
   max-width: 780px;
   margin-bottom: 18px;
 }
@@ -249,18 +283,17 @@ nav a:hover {
 .manifesto-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
   margin-top: 36px;
-  border: 3px solid var(--border);
+  border: 2px solid var(--border);
   background: var(--paper);
 }
 
 .manifesto-card {
   padding: 34px;
-  border-right: 3px solid var(--border);
-  border-bottom: 3px solid var(--border);
+  border-right: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
   min-height: 260px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .manifesto-card:nth-child(2),
@@ -276,8 +309,8 @@ nav a:hover {
 .manifesto-card span {
   display: inline-block;
   font-size: 15px;
-  font-weight: bold;
-  color: var(--accent);
+  font-weight: 800;
+  color: var(--primary-2);
   margin-bottom: 32px;
 }
 
@@ -285,21 +318,23 @@ nav a:hover {
   font-size: 30px;
   line-height: 1;
   margin-bottom: 18px;
+  color: var(--primary-dark);
 }
 
 .manifesto-card p {
-  color: var(--muted);
+  color: var(--ink-2);
   font-size: 17px;
 }
 
 .manifesto-card:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--primary-dark);
+  color: white;
 }
 
+.manifesto-card:hover h3,
 .manifesto-card:hover p,
 .manifesto-card:hover span {
-  color: var(--paper);
+  color: white;
 }
 
 .eligibility {
@@ -310,7 +345,8 @@ nav a:hover {
 }
 
 .skill-list {
-  border: 3px solid var(--border);
+  border: 2px solid var(--border);
+  background: var(--paper);
 }
 
 .skill-row {
@@ -319,7 +355,7 @@ nav a:hover {
   gap: 16px;
   align-items: center;
   padding: 22px;
-  border-bottom: 3px solid var(--border);
+  border-bottom: 2px solid var(--border);
 }
 
 .skill-row:last-child {
@@ -328,42 +364,48 @@ nav a:hover {
 
 .skill-row span {
   font-size: 13px;
-  color: var(--accent);
-  font-weight: bold;
+  color: var(--primary-2);
+  font-weight: 800;
 }
 
 .skill-row strong {
   font-size: 19px;
+  color: var(--ink);
 }
 
 .skill-row em {
   font-style: normal;
   font-size: 24px;
-  font-weight: bold;
-  color: var(--accent);
+  font-weight: 800;
+  color: var(--green);
 }
 
 .contact-section {
-  background: var(--accent);
+  background: var(--primary-dark);
   color: white;
 }
 
 .contact-section .section-tag {
-  color: #ffe7d6;
+  color: var(--accent);
+}
+
+.contact-section h2 {
+  color: white;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 3px solid var(--border);
+  border: 2px solid var(--border);
   background: var(--paper);
   color: var(--ink);
   margin-top: 32px;
+  box-shadow: 8px 8px 0 var(--accent);
 }
 
 .contact-grid div {
   padding: 26px;
-  border-right: 3px solid var(--border);
+  border-right: 2px solid var(--border);
 }
 
 .contact-grid div:last-child {
@@ -373,7 +415,7 @@ nav a:hover {
 .contact-grid strong {
   display: block;
   margin-bottom: 10px;
-  color: var(--accent);
+  color: var(--primary-2);
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -390,7 +432,7 @@ footer {
   gap: 30px;
   padding: 40px 6%;
   background: var(--ink);
-  color: var(--paper);
+  color: white;
 }
 
 footer h2 {
@@ -398,7 +440,7 @@ footer h2 {
 }
 
 footer p {
-  color: #d9cdbc;
+  color: #cbd5e1;
 }
 
 @media (max-width: 900px) {
@@ -435,7 +477,7 @@ footer p {
   .manifesto-card:nth-child(2),
   .manifesto-card:nth-child(4) {
     border-right: none;
-    border-bottom: 3px solid var(--border);
+    border-bottom: 2px solid var(--border);
   }
 
   .manifesto-card:last-child {
@@ -448,7 +490,7 @@ footer p {
 
   .contact-grid div {
     border-right: none;
-    border-bottom: 3px solid var(--border);
+    border-bottom: 2px solid var(--border);
   }
 
   .contact-grid div:last-child {
@@ -475,7 +517,7 @@ footer p {
 
   .stats-bar div {
     border-right: none;
-    border-bottom: 3px solid var(--border);
+    border-bottom: 2px solid var(--muted-border);
   }
 
   .stats-bar div:last-child {
