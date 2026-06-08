@@ -574,13 +574,13 @@ footer p {
 }
 
 .credibility span {
-  background: var(--accent);
-  color: var(--primary-dark);
-  border: 1px solid var(--accent);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   padding: 8px 14px;
   border-radius: 20px;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .project-hero {
