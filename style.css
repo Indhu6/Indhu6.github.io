@@ -574,7 +574,7 @@ footer p {
 }
 
 .credibility span {
-  background: white;
+  background: blue;
   border: 1px solid var(--muted-border);
   padding: 8px 14px;
   border-radius: 20px;
