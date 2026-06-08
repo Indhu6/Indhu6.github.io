@@ -701,3 +701,54 @@ footer p {
   border-radius: 14px;
   box-shadow: 0 16px 38px rgba(15, 23, 42, 0.14);
 }
+
+.project-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project-image-grid img {
+  width: 100%;
+  border: 2px solid var(--muted-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+@media (max-width: 900px) {
+  .project-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-gallery {
+  margin-top: 32px;
+}
+
+.dashboard-card {
+  background: white;
+  border: 1px solid var(--muted-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 48px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .08);
+}
+
+.dashboard-card img {
+  width: 100%;
+  display: block;
+}
+
+.dashboard-card-content {
+  padding: 24px;
+}
+
+.dashboard-card-content h3 {
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+}
+
+.dashboard-card-content p {
+  color: var(--ink-2);
+}
