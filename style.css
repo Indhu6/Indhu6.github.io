@@ -685,3 +685,19 @@ footer p {
     position: static;
   }
 }
+
+.dashboard-preview {
+  padding: 48px 6%;
+  background: var(--paper);
+  border-bottom: 2px solid var(--muted-border);
+}
+
+.dashboard-preview img {
+  width: 100%;
+  max-width: 1180px;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid var(--muted-border);
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.14);
+}
